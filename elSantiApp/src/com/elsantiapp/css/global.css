@@ -1,1 +1,35 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.root {
+    -color-primario: #FF9755;
+    -color-secundario: #228B22;
+    -color-fondo: #333;
+    -color-texto: white;
+}
+
+.panel {
+	-fx-border-color: -color-primario;
+    -fx-border-width: 1px;
+}
+
+.menu-lateral {
+	-fx-background-color: -color-fondo;
+	-fx-min-width: 150px;
+	-fx-max-width: 150px;
+}
+
+.menu-boton {
+	-fx-background-color: transparent;
+    -fx-text-fill: -color-texto;
+	-fx-font-size: 14px;
+	-fx-min-width: 150px;
+	-fx-max-width: 150px;
+	-fx-min-height: 50px;
+	-fx-cursor: hand;
+}
+
+.menu-boton:hover {
+	-fx-background-color: derive(-color-fondo, 20%);
+}
+
+.menu-boton.activo {
+	-fx-background-color: -color-primario;
+}
