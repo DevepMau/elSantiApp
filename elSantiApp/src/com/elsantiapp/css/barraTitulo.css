@@ -1,0 +1,29 @@
+.barra-superior {
+	-fx-background-color: linear-gradient(to bottom, -color-primario, derive(-color-primario, -30%));
+	-fx-min-height: 40px;
+	-fx-max-height: 40px;
+}
+
+.barra-boton {
+	-fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-min-height: 40px;
+	-fx-max-height: 40px;
+	-fx-min-width: 40px;
+	-fx-text-fill: -color-texto;
+	-fx-font-weight: bold;
+}
+
+.barra-boton:hover {
+    -fx-background-color: derive(-color-primario, 10%);
+}
+
+.barra-boton:pressed {
+    -fx-background-color: derive(-color-primario, 30%);
+}
+
+.barra-titulo {
+	-fx-text-fill: -color-texto;
+	-fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
