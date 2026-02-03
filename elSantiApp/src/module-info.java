@@ -1,5 +1,5 @@
 module elSantiApp {
 	requires javafx.controls;
 	
-	opens application to javafx.graphics, javafx.fxml;
+	opens com.elsantiapp.application to javafx.graphics, javafx.fxml;
 }
