@@ -1,0 +1,69 @@
+package com.elsantiapp.db;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+public class InicializadorDB {
+    public static void inicializar() {
+        try (Connection conn = ConexionDB.conectar();
+             Statement stmt = conn.createStatement()) {
+
+        	String sqlClientes = "CREATE TABLE IF NOT EXISTS clientes (" +
+        		    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+        		    "nombre TEXT NOT NULL," +
+        		    "telefono TEXT," +
+        		    "email TEXT," +
+        		    "barrio_privado INTEGER DEFAULT 0," +
+        		    "numero_lote INTEGER," +
+        		    "localidad TEXT," +
+        		    "direccion TEXT," +
+        		    "color TEXT NOT NULL,"+
+        		    "activo INTEGER DEFAULT 1," +
+        		    "fecha_creacion DATE NOT NULL" +
+        		    ");";
+
+        	stmt.execute(sqlClientes);
+            
+            String sqlTrabajos = "CREATE TABLE IF NOT EXISTS trabajos (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "nombre TEXT NOT NULL," +
+                    "detalle TEXT," +
+                    "precio REAL NOT NULL DEFAULT 0," +
+                    "unidad TEXT NOT NULL," +
+                    "activo INTEGER NOT NULL DEFAULT 1" +
+                    ");";
+
+            stmt.execute(sqlTrabajos);
+            
+            String sqlServicios = "CREATE TABLE IF NOT EXISTS servicios (" +
+            	    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+            	    "cliente_id INT NOT NULL, "+
+            	    "fecha_creacion DATE NOT NULL," +
+            	    "fecha_programada DATE NOT NULL," +
+            	    "tipo TEXT," +
+            	    "precio REAL NOT NULL DEFAULT 0," +
+            	    "gastos REAL NOT NULL DEFAULT 0," +
+            	    "monto_final REAL NOT NULL DEFAULT 0," +
+            	    "estado TEXT," +
+            	    "FOREIGN KEY (cliente_id) REFERENCES clientes(id)" +
+            	    ");";
+            
+            stmt.execute(sqlServicios);
+            
+            String sqlServicioDetalles = "CREATE TABLE IF NOT EXISTS servicio_detalles (" +
+            	    "servicio_id INT NOT NULL," +
+            	    "trabajo_id INT NOT NULL," +
+            	    "cantidad INT NOT NULL DEFAULT 1," +
+            	    "estado TEXT NOT NULL," +
+            	    "PRIMARY KEY (servicio_id, trabajo_id)," +
+            	    "FOREIGN KEY (servicio_id) REFERENCES servicios(id)," +
+            	    "FOREIGN KEY (trabajo_id) REFERENCES trabajos(id)" +
+            	    ");";
+            
+            stmt.execute(sqlServicioDetalles);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+ }

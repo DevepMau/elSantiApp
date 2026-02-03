@@ -1,5 +1,7 @@
 package com.elsantiapp.application;
 	
+import com.elsantiapp.db.InicializadorDB;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -21,6 +23,7 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
+		InicializadorDB.inicializar();
 		launch(args);
 	}
 }
