@@ -33,3 +33,21 @@
 .menu-boton.activo {
 	-fx-background-color: -color-primario;
 }
+
+.submenu-boton {
+	-fx-background-color: transparent;
+    -fx-text-fill: derive(-color-texto, -10%);
+	-fx-font-size: 12px;
+	-fx-min-width: 150px;
+	-fx-max-width: 150px;
+	-fx-min-height: 30px;
+	-fx-cursor: hand;
+}
+
+.submenu-boton:hover {
+	-fx-background-color: derive(-color-fondo, 20%);
+}
+
+.submenu-boton.activo-submenu {
+	-fx-background-color: derive(-color-fondo, 50%);
+}
