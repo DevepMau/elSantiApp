@@ -32,7 +32,7 @@ public class BarraTituloView extends HBox {
 	    HBox.setHgrow(separador, Priority.ALWAYS);
 	    
 	    this.getStylesheets().add(
-	    		getClass().getResource("/com/elsantiapp/css/barraTitulo.css").toExternalForm());
+	    		getClass().getResource("/com/elsantiapp/css/barra-titulo.css").toExternalForm());
 	    this.getStyleClass().add("barra-superior");
 	    btnCerrar.getStyleClass().add("barra-boton");
 	    btnMaximizar.getStyleClass().add("barra-boton");
