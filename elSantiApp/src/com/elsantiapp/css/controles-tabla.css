@@ -1,0 +1,21 @@
+.controles-tabla-contenedor {
+	-fx-background-color: linear-gradient(to bottom, -color-fondo, derive(-color-fondo, 20%));
+	-fx-min-height: 100px;
+	-fx-max-height: 100px;
+}
+
+.controles-tabla-boton {
+	-fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-min-height: 100px;
+	-fx-max-height: 100px;
+	-fx-min-width: 100px;
+}
+
+.controles-tabla-boton:hover {
+    -fx-background-color: derive(-color-fondo, 20%);
+}
+
+.controles-tabla-boton:pressed {
+    -fx-background-color: derive(-color-fondo, 40%);
+}
