@@ -10,16 +10,16 @@ public class InicializadorDB {
 
         	String sqlClientes = "CREATE TABLE IF NOT EXISTS clientes (" +
         		    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+        		    "fecha_creacion DATE NOT NULL," +
         		    "nombre TEXT NOT NULL," +
-        		    "telefono TEXT," +
+        		    "telefono TEXT NOT NULL," +
         		    "email TEXT," +
-        		    "barrio_privado INTEGER DEFAULT 0," +
-        		    "numero_lote INTEGER," +
         		    "localidad TEXT," +
-        		    "direccion TEXT," +
+        		    "barrio_privado INTEGER NOT NULL DEFAULT 0," +
+        		    "calle_barrio TEXT," +
+        		    "altura_lote INTEGER," +
         		    "color TEXT NOT NULL,"+
-        		    "activo INTEGER DEFAULT 1," +
-        		    "fecha_creacion DATE NOT NULL" +
+        		    "activo INTEGER NOT NULL DEFAULT 1" +
         		    ");";
 
         	stmt.execute(sqlClientes);
