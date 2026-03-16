@@ -1,4 +1,4 @@
-package com.elsantiapp.view;
+package com.elsantiapp.ui.components;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
