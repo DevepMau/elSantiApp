@@ -2,9 +2,14 @@ package com.elsantiapp.application;
 	
 import javafx.util.Duration;
 
-import com.elsantiapp.controller.BarraTituloController;
+import java.time.LocalDate;
+
+import com.elsantiapp.controller.ClienteGestor;
+import com.elsantiapp.controller.FormularioClienteGestor;
+import com.elsantiapp.dao.ClienteDAO;
 import com.elsantiapp.db.InicializadorDB;
-import com.elsantiapp.view.BarraTituloView;
+import com.elsantiapp.model.Cliente;
+import com.elsantiapp.ui.components.BarraTitulo;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
@@ -14,8 +19,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -36,7 +39,7 @@ public class Main extends Application {
         // Logo
         Image logo = new Image(getClass().getResource("/logo/logo.png").toExternalForm());
         ImageView logoView = new ImageView(logo);
-        logoView.setFitWidth(150);
+        logoView.setFitWidth(120);
         logoView.setPreserveRatio(true);
 
         // Botones del menú lateral
@@ -58,8 +61,11 @@ public class Main extends Application {
         Button[] botones = {btnTablas, btnCronograma, btnReportes, btnKanban};
         Button[] botonesSubMenu = {btnClientes, btnTrabajos, btnServicios};
         
-        BarraTituloView barraTituloView = new BarraTituloView();
-        BarraTituloController barraTitulo = new BarraTituloController("ElSantiApp v1", barraTituloView);
+        BarraTitulo barraTitulo = new BarraTitulo("ElSantiApp v1", true);
+        
+        ClienteDAO clienteDao = new ClienteDAO();
+        FormularioClienteGestor formularioCliente = new FormularioClienteGestor();
+        ClienteGestor cliente = new ClienteGestor(clienteDao, formularioCliente);
 
         for (Button btn : botones) {
             btn.getStyleClass().add("menu-boton");
@@ -74,7 +80,7 @@ public class Main extends Application {
 
         // Panel principal
         BorderPane root = new BorderPane();
-        root.setTop(barraTitulo.getView());
+        root.setTop(barraTitulo);
         root.setLeft(menuLateral);
         root.getStyleClass().add("panel");
 
@@ -106,7 +112,7 @@ public class Main extends Application {
         		for(Button b : botonesSubMenu) b.getStyleClass().remove("activo-submenu");
         		btn.getStyleClass().add("activo-submenu");
         		
-				if (btn == btnClientes) root.setCenter(new javafx.scene.control.Label("Vista de Clientes"));
+				if (btn == btnClientes) root.setCenter(cliente.getVista());
 				else if (btn == btnTrabajos) root.setCenter(new javafx.scene.control.Label("Vista de Trabajos"));
 				else if (btn == btnServicios) root.setCenter(new javafx.scene.control.Label("Vista de Servicios"));
         	});
