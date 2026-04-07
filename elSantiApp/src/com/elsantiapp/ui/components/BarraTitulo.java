@@ -19,10 +19,12 @@ public class BarraTitulo extends HBox {
 	private double xOffset = 0;
     private double yOffset = 0;
 	
-	public BarraTitulo(String titulo) {
+	public BarraTitulo(String titulo, boolean redimencionable) {
 		
 		crearComponentes(titulo);
-		inicializar();   
+		inicializar(); 
+		
+		btnMaximizar.setManaged(redimencionable);
 	}
 	
 	private void crearComponentes(String titulo) {
