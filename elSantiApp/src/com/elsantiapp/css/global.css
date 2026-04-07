@@ -12,16 +12,16 @@
 
 .menu-lateral {
 	-fx-background-color: -color-fondo;
-	-fx-min-width: 150px;
-	-fx-max-width: 150px;
+	-fx-min-width: 120px;
+	-fx-max-width: 120px;
 }
 
 .menu-boton {
 	-fx-background-color: transparent;
     -fx-text-fill: -color-texto;
 	-fx-font-size: 14px;
-	-fx-min-width: 150px;
-	-fx-max-width: 150px;
+	-fx-min-width: 120px;
+	-fx-max-width: 120px;
 	-fx-min-height: 50px;
 	-fx-cursor: hand;
 }
@@ -38,8 +38,8 @@
 	-fx-background-color: transparent;
     -fx-text-fill: derive(-color-texto, -10%);
 	-fx-font-size: 12px;
-	-fx-min-width: 150px;
-	-fx-max-width: 150px;
+	-fx-min-width: 120px;
+	-fx-max-width: 120px;
 	-fx-min-height: 30px;
 	-fx-cursor: hand;
 }
@@ -50,4 +50,149 @@
 
 .submenu-boton.activo-submenu {
 	-fx-background-color: derive(-color-fondo, 50%);
+}
+
+.table-view {
+	-fx-background-color: -color-fondo;
+	-fx-border-color: derive(-color-fondo, -20%);
+}
+
+.table-view .text {
+	-fx-fill: white;
+  	-fx-font-size: 13;
+  	-fx-font-family: "Arial";
+    -fx-text-alignment: center;
+}
+
+.table-cell {
+    -fx-border-color: transparent;
+    -fx-alignment: CENTER;
+}
+
+.table-row-cell {
+    -fx-pref-height: 40;
+}
+
+.table-row-cell:even {
+    -fx-background-color: derive(-color-fondo, 10%);
+}
+
+.table-row-cell:odd {
+    -fx-background-color: -color-fondo;
+}
+
+.table-row-cell:selected {
+	-fx-background-color: derive(-color-secundario, -40%);
+}
+
+.table-view .column-header-background .columna-tabla {
+  	-fx-background-color: linear-gradient(to bottom, #888, #555);
+  	-fx-pref-height: 50;
+  	-fx-border-color: derive(-color-fondo, 20%);
+}
+
+.contenedor-ventana {
+	-fx-background-color: -color-fondo;
+	-fx-border-color: -color-primario;
+    -fx-border-width: 1px;
+}
+
+.label-error {
+	-fx-font-size: 10;
+	-fx-text-fill: #FF6B6B;
+	-fx-padding: 0;
+}
+
+.formulario {
+	-fx-padding: 10 10 10 10;
+}
+
+.formulario .text-field {
+	-fx-pref-width: 400;
+	-fx-min-height: 40;
+	-fx-max-height: 40;
+	-fx-background-color: -color-fondo;
+	-fx-border-radius: 10;
+	-fx-border-color: derive(-color-texto, -10%);
+	-fx-text-fill: -color-texto;
+	-fx-font-size: 16;	
+}
+
+.formulario .text-field:hover {
+	-fx-border-width: 2px;
+}
+
+.formulario .text-field:focused {
+    -fx-border-color: #FF8533;
+    -fx-border-width: 2;
+}
+
+.formulario-boton {
+	-fx-background-color: linear-gradient(to bottom, derive(-color-fondo, 10%), derive(-color-fondo, 30%));
+	-fx-pref-width: 400;
+	-fx-min-height: 60;
+	-fx-max-height: 60;
+	-fx-text-fill: -color-texto;
+	-fx-font-size: 16;
+	-fx-font-weight: bold;
+	-fx-cursor: hand;
+}
+
+.formulario-boton:hover {
+	-fx-background-color: linear-gradient(to bottom, derive(-color-fondo, 30%), derive(-color-fondo, 50%));
+}
+
+.box-chk {
+	-fx-alignment: CENTER;
+}
+
+.box-chk .label {
+	-fx-text-fill: white;
+	-fx-font-size: 16;
+}
+
+.formulario .check-box .box {
+    -fx-background-color: white;
+    -fx-background-radius: 25;
+    -fx-border-color: #333;
+    -fx-border-radius: 25;
+    -fx-pref-width: 20;
+    -fx-pref-height: 20;
+}
+
+.formulario .check-box:selected .box {
+    -fx-background-color: #4CAF50;
+    -fx-border-color: #333;
+}
+
+.formulario .check-box .mark {
+    -fx-background-color: white;
+}
+
+.formulario-boton-color {
+	-fx-background-radius: 20;
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-max-width: 40;
+    -fx-max-height: 40;
+    -fx-border-color: -color-texto;
+    -fx-border-radius: 20;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+}
+
+.formulario-boton-color:hover {
+	-fx-border-color: -color-texto;
+	-fx-border-width: 2;
+}
+
+.formulario-boton-color:focused {
+	-fx-border-color: #FF8533;
+	-fx-border-width: 2;
+}
+
+.box-dato-contenedor {
+	-fx-border-color: derive(-color-texto, -10%);
+	-fx-border-radius: 10;
+	-fx-padding: 10 10 10 10;
 }

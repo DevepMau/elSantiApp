@@ -1,0 +1,41 @@
+.root {
+    -color-primario: #FF9755;
+    -color-secundario: #228B22;
+    -color-fondo: #333;
+    -color-texto: white;
+}
+
+.alerta-ventana-mensaje {
+	-fx-background-color: -color-fondo;
+	-fx-border-color: -color-primario;
+    -fx-border-width: 1px;
+    -fx-background-repeat: no-repeat;
+	-fx-background-size: 40% 65%;
+	-fx-background-position: right;
+}
+
+.alerta {
+	-fx-alignment: CENTER;
+	-fx-padding: 20 10 0 10;
+}
+
+.alerta .label {
+	-fx-text-fill: -color-texto;
+	-fx-font-weight: bold;
+	-fx-font-size: 16;
+}
+
+.alerta-boton {
+	-fx-background-color: linear-gradient(to bottom, derive(-color-fondo, 10%), derive(-color-fondo, 30%));
+	-fx-pref-width: 400;
+	-fx-min-height: 60;
+	-fx-max-height: 60;
+	-fx-text-fill: -color-texto;
+	-fx-font-size: 16;
+	-fx-font-weight: bold;
+	-fx-cursor: hand;
+}
+
+.alerta-boton:hover {
+	-fx-background-color: linear-gradient(to bottom, derive(-color-fondo, 30%), derive(-color-fondo, 50%));
+}
