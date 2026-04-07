@@ -10,6 +10,7 @@ import com.elsantiapp.dao.ClienteDAO;
 import com.elsantiapp.db.InicializadorDB;
 import com.elsantiapp.model.Cliente;
 import com.elsantiapp.ui.components.BarraTitulo;
+import com.elsantiapp.ui.components.PieDePagina;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
@@ -63,6 +64,8 @@ public class Main extends Application {
         
         BarraTitulo barraTitulo = new BarraTitulo("ElSantiApp v1", true);
         
+        PieDePagina pieDePagina = new PieDePagina();
+        
         ClienteDAO clienteDao = new ClienteDAO();
         FormularioClienteGestor formularioCliente = new FormularioClienteGestor();
         ClienteGestor cliente = new ClienteGestor(clienteDao, formularioCliente);
@@ -82,6 +85,7 @@ public class Main extends Application {
         BorderPane root = new BorderPane();
         root.setTop(barraTitulo);
         root.setLeft(menuLateral);
+        root.setBottom(pieDePagina);
         root.getStyleClass().add("panel");
 
         for (Button btn : botones) {

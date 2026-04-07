@@ -52,6 +52,16 @@
 	-fx-background-color: derive(-color-fondo, 50%);
 }
 
+.pie-de-pagina {
+	-fx-background-color: derive(-color-fondo, -10%);
+	-fx-min-height: 24;
+	-fx-alignment: center;
+}
+
+.pie-de-pagina .label {
+	-fx-text-fill: -color-texto;
+}
+
 .table-view {
 	-fx-background-color: -color-fondo;
 	-fx-border-color: derive(-color-fondo, -20%);
