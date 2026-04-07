@@ -14,6 +14,7 @@ public class Cliente {
 	private String calleBarrio;
 	private int alturaLote;
 	private String color;
+	private boolean activo;
 	
 	public Cliente(int id, LocalDate fechaCreacion, String nombre, String telefono, String email, String localidad, boolean barrioPrivado, String calleBarrio, int alturaLote, String color) {
 		
@@ -27,24 +28,28 @@ public class Cliente {
 		this.calleBarrio = calleBarrio;
 		this.alturaLote = alturaLote;
 		this.color = color;
+		this.activo = true;
 	}
 	
-	public boolean validarCliente() {
+	public int cantCamposInvalidos() {
 		
 		int errores = 0;
 		if(nombre.isBlank() || nombre.isEmpty()) {
 			
+			System.out.println("error de nombre");
 			errores++;
 		}
 		if(fechaCreacion == null) {
 			
+			System.out.println("error de fecha");
 			errores++;
 		}
-		if(telefono.isBlank() || telefono.isEmpty() || telefono.matches("\\d{7,15}")) {
+		if(telefono.isBlank() || telefono.isEmpty() || !telefono.matches("\\d{8,15}")) {
 			
+			System.out.println("error de telefono");
 			errores++;
 		}
-		return errores == 0;
+		return errores;
 	}
 	
 	//GETTERS & SETTERS ///////////////////////////////////////////////////////////////////
@@ -127,6 +132,14 @@ public class Cliente {
 
 	public void setColor(String color) {
 		this.color = color;
+	}
+	
+	public boolean isActivo() {
+		return activo;
+	}
+	
+	public void setActivo(boolean activo) {
+		this.activo = activo;
 	}
 	
 
