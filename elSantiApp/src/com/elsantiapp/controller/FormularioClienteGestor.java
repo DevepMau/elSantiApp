@@ -21,12 +21,7 @@ public class FormularioClienteGestor {
 		
 		this.vista = new FormularioClienteVista();
 		this.setClienteGenerado(null);
-		
-		vista.getBtnGuardar().setOnAction(c -> {
-			this.setClienteGenerado(generarCliente());
-			cerrar();
-		});
-		
+
 		vista.getBtnElegirColor().setOnAction(c -> {
 			vista.getColorPicker().show();	
 		});
