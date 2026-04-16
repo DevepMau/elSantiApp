@@ -55,8 +55,6 @@ public class FormularioClienteVista extends Stage {
 		scene.getStylesheets().add(getClass().getResource("/com/elsantiapp/css/global.css").toExternalForm());
 		contenedor.getStyleClass().add("contenedor-ventana");
 		
-		resaltarErrores();
-		
 		setScene(scene);
 		initModality(Modality.APPLICATION_MODAL);
 	}
@@ -131,8 +129,6 @@ public class FormularioClienteVista extends Stage {
 		
 		return formulario;
 	}
-	
-	private void resaltarErrores() {}
 
 	public Button getBtnGuardar() {
 		return btnGuardar;
