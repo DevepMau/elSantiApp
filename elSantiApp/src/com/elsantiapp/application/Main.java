@@ -2,13 +2,19 @@ package com.elsantiapp.application;
 	
 import javafx.util.Duration;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import com.elsantiapp.controller.ClienteGestor;
 import com.elsantiapp.controller.FormularioClienteGestor;
+import com.elsantiapp.controller.FormularioTareaGestor;
+import com.elsantiapp.controller.TareaGestor;
 import com.elsantiapp.dao.ClienteDAO;
+import com.elsantiapp.dao.TareaDAO;
 import com.elsantiapp.db.InicializadorDB;
 import com.elsantiapp.model.Cliente;
+import com.elsantiapp.model.Tarea;
+import com.elsantiapp.ui.TareaVista;
 import com.elsantiapp.ui.components.BarraTitulo;
 import com.elsantiapp.ui.components.PieDePagina;
 
@@ -69,6 +75,10 @@ public class Main extends Application {
         ClienteDAO clienteDao = new ClienteDAO();
         FormularioClienteGestor formularioCliente = new FormularioClienteGestor();
         ClienteGestor cliente = new ClienteGestor(clienteDao, formularioCliente);
+        
+        TareaDAO tareaDao = new TareaDAO();
+        FormularioTareaGestor formularioTarea = new FormularioTareaGestor();
+        TareaGestor tarea = new TareaGestor(tareaDao, formularioTarea);
 
         for (Button btn : botones) {
             btn.getStyleClass().add("menu-boton");
@@ -117,7 +127,7 @@ public class Main extends Application {
         		btn.getStyleClass().add("activo-submenu");
         		
 				if (btn == btnClientes) root.setCenter(cliente.getVista());
-				else if (btn == btnTrabajos) root.setCenter(new javafx.scene.control.Label("Vista de Trabajos"));
+				else if (btn == btnTrabajos) root.setCenter(tarea.getVista());
 				else if (btn == btnServicios) root.setCenter(new javafx.scene.control.Label("Vista de Servicios"));
         	});
         }
