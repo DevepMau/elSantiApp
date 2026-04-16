@@ -61,6 +61,27 @@ public class ClienteVista extends VBox {
         colBarrioPrivado.getStyleClass().add("columna-tabla");
         colAlturaLote.getStyleClass().add("columna-tabla");
         
+        colNombre.setCellFactory(col -> new TableCell<Cliente, String>(){
+        	
+        	protected void updateItem(String item, boolean empty) {
+        		
+        		super.updateItem(item, empty);
+        		if(empty || item == null) {
+        			
+        			setText(null);
+        			setStyle("");
+        		} else {
+        			Cliente cliente = getTableRow().getItem();
+               	 	if(cliente != null) {
+               	 		
+               	 		String color = cliente.getColor();
+               	 		setText(item);
+               	 		setStyle("-fx-text-fill: "+color+"; -fx-font-weight: bold;");
+               	 	}
+        		}
+        	}
+        });
+        
         colBarrioPrivado.setCellFactory(col -> new TableCell<Cliente, Boolean>() {
         	
             protected void updateItem(Boolean item, boolean empty) {
