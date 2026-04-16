@@ -1,7 +1,5 @@
 package com.elsantiapp.controller;
 
-import java.util.List;
-
 import com.elsantiapp.dao.ClienteDAO;
 import com.elsantiapp.model.Cliente;
 import com.elsantiapp.ui.Alerta;
