@@ -62,7 +62,7 @@ public class ClienteVista extends VBox {
         colAlturaLote.getStyleClass().add("columna-tabla");
         
         colNombre.setCellFactory(col -> new TableCell<Cliente, String>(){
-        	
+        	@Override
         	protected void updateItem(String item, boolean empty) {
         		
         		super.updateItem(item, empty);
@@ -83,7 +83,7 @@ public class ClienteVista extends VBox {
         });
         
         colBarrioPrivado.setCellFactory(col -> new TableCell<Cliente, Boolean>() {
-        	
+        	@Override
             protected void updateItem(Boolean item, boolean empty) {
                 super.updateItem(item, empty);
                 if (empty || item == null) {
