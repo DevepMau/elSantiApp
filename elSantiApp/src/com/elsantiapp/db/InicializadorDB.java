@@ -24,16 +24,16 @@ public class InicializadorDB {
 
         	stmt.execute(sqlClientes);
             
-            String sqlTrabajos = "CREATE TABLE IF NOT EXISTS trabajos (" +
+            String sqlTareas = "CREATE TABLE IF NOT EXISTS tareas (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "nombre TEXT NOT NULL," +
                     "detalle TEXT," +
-                    "precio REAL NOT NULL DEFAULT 0," +
+                    "precio DECIMAL(10,2) NOT NULL DEFAULT 0.00," +
                     "unidad TEXT NOT NULL," +
                     "activo INTEGER NOT NULL DEFAULT 1" +
                     ");";
 
-            stmt.execute(sqlTrabajos);
+            stmt.execute(sqlTareas);
             
             String sqlServicios = "CREATE TABLE IF NOT EXISTS servicios (" +
             	    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
