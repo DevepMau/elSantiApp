@@ -117,6 +117,32 @@
 	-fx-padding: 10 10 10 10;
 }
 
+.formulario .text-area {
+	-fx-background-color: -color-fondo;
+	-fx-border-color: derive(-color-texto, -10%);
+	-fx-border-radius: 10;
+	-fx-text-fill: -color-texto;
+	-fx-font-size: 16;
+	-fx-font-family: "Arial";
+}
+
+.formulario .text-area .content {
+	-fx-background-color: -color-fondo;
+}
+
+.formulario .text-area:focused {
+    -fx-border-color: #FF8533;
+}
+
+.formulario .text-area .scroll-bar:vertical {
+	-fx-background-color: transparent;
+}
+
+.formulario .text-area .scroll-bar:vertical .thumb {
+	-fx-background-color: derive(-color-fondo, 30%);
+    -fx-background-radius: 5;
+}
+
 .formulario .text-field {
 	-fx-pref-width: 400;
 	-fx-min-height: 40;
@@ -136,6 +162,35 @@
     -fx-border-color: #FF8533;
     -fx-border-width: 2;
 }
+
+.formulario .combo-box {
+	-fx-min-width: 175;
+	-fx-min-height: 40;
+	-fx-max-height: 40;
+	-fx-border-radius: 10;
+	-fx-border-color: derive(-color-texto, -10%);
+	-fx-background-color: -color-fondo;
+	-fx-font-size: 16;
+}
+
+.formulario .combo-box .list-cell {
+	-fx-background-color: -color-fondo;
+	-fx-text-fill: -color-texto;
+}
+
+.formulario .combo-box-popup .list-view {
+	-fx-control-inner-background: -color-fondo;
+	-fx-control-inner-background-alt: -color-fondo;
+}  
+
+
+.formulario .combo-box-popup .list-view .list-cell:hover {
+	-fx-background-color: -color-primario;
+}  
+
+.formulario .combo-box-popup .list-view .list-cell:focused {
+	-fx-background-color: derive(-color-primario, -20%);
+}  
 
 .formulario-boton {
 	-fx-background-color: linear-gradient(to bottom, derive(-color-fondo, 10%), derive(-color-fondo, 30%));
